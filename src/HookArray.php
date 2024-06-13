@@ -4,12 +4,12 @@ class HookArray
 {
     private $hooks = array();
 
-    static function fromFile($filepath)
+    static function fromFile(string $filepath): HookArray
     {
         $content = file_get_contents($filepath);
 
         if ($content === false) {
-            die('Failed to access sconfiguration file.');
+            die('Failed to access configuration file.');
         }
 
         $rules = json_decode($content, true);
@@ -23,12 +23,12 @@ class HookArray
         return $hookArray;
     }
 
-    public function add($endpoint, $action)
+    public function add(string $endpoint, string $action)
     {
         $this->hooks[$endpoint] = $action;
     }
 
-    public function handleRequest($endpoint)
+    public function handleRequest($endpoint): string
     {
         if (!isset($this->hooks[$endpoint]))
             throw new Exception("Endpoint {$endpoint} does not exist.");

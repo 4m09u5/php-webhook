@@ -1,1 +1,1 @@
-php -q -S 0.0.0.0:9000 webhook.php > /dev/null &
+php -q -S 0.0.0.0:9000 src/main.php > /dev/null &

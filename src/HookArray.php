@@ -2,7 +2,7 @@
 
 class HookArray
 {
-    private $hooks = array();
+    private array $hooks;
 
     static function fromFile(string $filepath): HookArray
     {
@@ -28,7 +28,7 @@ class HookArray
         $this->hooks[$endpoint] = $action;
     }
 
-    public function handleRequest($endpoint): string
+    public function handleRequest($endpoint): string|null
     {
         if (!isset($this->hooks[$endpoint]))
             throw new Exception("Endpoint {$endpoint} does not exist.");

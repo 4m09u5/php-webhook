@@ -4,7 +4,7 @@ require_once "Logger.php";
 
 class FileLogger implements Logger
 {
-    private $directory;
+    private string $directory;
 
     private static function setTimestamp(string $message): string
     {

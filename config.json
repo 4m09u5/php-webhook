@@ -1,0 +1,14 @@
+[
+  {
+    "endpoint": "/run-script",
+    "action": "scripts/test.sh"
+  },
+  {
+    "endpoint": "/sleep",
+    "action": "sleep 1"
+  },
+  {
+    "endpoint": "/whoami",
+    "action": "whoami"
+  }
+]

@@ -1,1 +1,1 @@
-php -q -S localhost:9000 webhook.php > /dev/null &
+php -q -S 0.0.0.0a:9000 webhook.php > /dev/null &
